@@ -1,3 +1,4 @@
+export 'package:audioplayers/src/widgets/audio_player_widget.dart';
 export 'package:audioplayers_platform_interface/src/api/audio_context.dart';
 export 'package:audioplayers_platform_interface/src/api/audio_context_config.dart';
 export 'package:audioplayers_platform_interface/src/api/audio_event.dart';
