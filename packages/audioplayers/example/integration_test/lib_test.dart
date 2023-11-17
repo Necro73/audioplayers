@@ -104,10 +104,10 @@ void main() async {
           await tester.pumpLinux();
 
           if (useTimerPositionUpdater) {
-            player.positionUpdater = TimerPositionUpdater(
-              getPosition: player.getCurrentPosition,
-              interval: const Duration(milliseconds: 100),
-            );
+            //player.positionUpdater = TimerPositionUpdater(
+            //  getPosition: player.getCurrentPosition,
+            //  interval: const Duration(milliseconds: 100),
+            //);
           }
           final futurePositions = player.onPositionChanged.toList();
 

@@ -38,8 +38,8 @@ void main() {
       expect(call.method, 'setGlobalAudioContext');
       expect(
         call.value,
-        AudioContext(
-          android: const AudioContextAndroid(
+        const AudioContext(
+          android: AudioContextAndroid(
             isSpeakerphoneOn: false,
             audioMode: AndroidAudioMode.normal,
             stayAwake: false,
@@ -49,7 +49,7 @@ void main() {
           ),
           iOS: AudioContextIOS(
             category: AVAudioSessionCategory.playback,
-            options: const {},
+            //options: {},
           ),
         ),
       );
