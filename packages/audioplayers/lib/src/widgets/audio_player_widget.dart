@@ -109,7 +109,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final color = widget.colorButton ?? Theme.of(context).primaryColor;
+    final color = Theme.of(context).primaryColor;
     return Stack(
       children: [
         (_isPlaying)
@@ -122,7 +122,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                   Icons.pause,
                   size: 48.0,
                   opticalSize: 48.0,
-                  color: color,
+                  color: widget.colorButton ?? color,
                 ),
               )
             : InkWell(
@@ -164,8 +164,8 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                 ],
               ),
               Slider(
-                activeColor: widget.activePlayerColor,
-                inactiveColor: widget.inactivePlayerColor,
+                activeColor: widget.activePlayerColor ?? color,
+                inactiveColor: widget.inactivePlayerColor ?? color,
                 onChanged: (v) {
                   final duration = _duration;
                   if (duration == null) {
@@ -190,8 +190,8 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
             width: 100,
             height: 50,
             child: Slider(
-              activeColor: widget.activeVolumeColor,
-              inactiveColor: widget.inactiveVolumeColor,
+              activeColor: widget.activeVolumeColor ?? color,
+              inactiveColor: widget.inactiveVolumeColor ?? color,
               onChanged: (v) {
                 player.setVolume(v);
                 setState(() {
