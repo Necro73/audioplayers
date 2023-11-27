@@ -165,7 +165,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
               ),
               Slider(
                 activeColor: widget.activePlayerColor ?? color,
-                inactiveColor: widget.inactivePlayerColor ?? color,
+                inactiveColor: widget.inactivePlayerColor,
                 onChanged: (v) {
                   final duration = _duration;
                   if (duration == null) {
@@ -191,7 +191,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
             height: 50,
             child: Slider(
               activeColor: widget.activeVolumeColor ?? color,
-              inactiveColor: widget.inactiveVolumeColor ?? color,
+              inactiveColor: widget.inactiveVolumeColor,
               onChanged: (v) {
                 player.setVolume(v);
                 setState(() {
