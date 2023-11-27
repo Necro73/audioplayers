@@ -134,7 +134,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                   Icons.play_arrow,
                   size: 48.0,
                   opticalSize: 48.0,
-                  color: color,
+                  color: widget.colorButton ?? color,
                 ),
               ),
         Padding(
